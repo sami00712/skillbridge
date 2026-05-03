@@ -61,13 +61,8 @@ const Navbar = ({ onNavigate, currentPage, onOpenDocs, progressPercentage, userL
           className="flex items-center gap-2 cursor-pointer group"
           onClick={() => handleNavigate('landing')}
         >
-          <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center overflow-hidden scale-100 group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(212,175,55,0.4)] border border-gold">
-            <img 
-              src="/favicon.png" 
-              alt="Skill Bridge Logo" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
+          <div className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center overflow-hidden scale-100 group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(212,175,55,0.4)]">
+            <span className="text-white font-black text-xs">SB</span>
           </div>
           <span className="font-bold text-lg tracking-tight text-brand-blue-dark uppercase text-nowrap">
             Skill Bridge <span className="text-gold-dark">Academy</span>
