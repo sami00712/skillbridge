@@ -23,7 +23,7 @@ import {
   Moon,
   Sun
 } from 'lucide-react';
-import { COURSE_DATA, Module, Topic, projectsData } from './constants/courseData';
+import { WEB_DEV_COURSE, PYTHON_AI_COURSE, Module, Topic, projectsData } from './constants/courseData';
 import { cn } from './lib/utils';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -61,8 +61,8 @@ const Navbar = ({ onNavigate, currentPage, onOpenDocs, progressPercentage, userL
           className="flex items-center gap-2 cursor-pointer group"
           onClick={() => handleNavigate('landing')}
         >
-          <div className="w-8 h-8 rounded-lg bg-gold flex items-center justify-center overflow-hidden scale-100 group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(212,175,55,0.4)]">
-            <span className="text-white font-black text-xs">SB</span>
+          <div className="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center text-white border border-gold shadow-lg overflow-hidden scale-100 group-hover:scale-110 transition-transform">
+            <GraduationCap size={20} />
           </div>
           <span className="font-bold text-lg tracking-tight text-brand-blue-dark uppercase text-nowrap">
             Skill Bridge <span className="text-gold-dark">Academy</span>
@@ -228,7 +228,7 @@ const Hero = ({ onStartLearning, onExploreProjects }: { onStartLearning: () => v
           </div>
 
           <h1 className="text-5xl lg:text-7xl font-extrabold text-brand-blue-dark leading-tight mb-8 max-w-4xl mx-auto tracking-tight">
-            Learn Web Development <br/>& <span className="text-gold-dark underline decoration-brand-blue/10 underline-offset-8">AI</span> from Scratch
+            Learn <span className="text-gold-dark underline decoration-brand-blue/10 underline-offset-8">AI Web Development</span> <br/>& <span className="text-gold-dark underline decoration-brand-blue/10 underline-offset-8">Python AI</span> from Scratch
           </h1>
           
           <p className="max-w-2xl mx-auto text-lg text-slate-600 mb-12 leading-relaxed">
@@ -290,7 +290,8 @@ const DocsPage = ({
   toggleTopicCompletion,
   progressPercentage,
   userLevel,
-  allTopicsFlat
+  allTopicsFlat,
+  currentCourseData
 }: { 
   onBack: () => void,
   activeModule: Module,
@@ -301,7 +302,8 @@ const DocsPage = ({
   toggleTopicCompletion: (id: string) => void,
   progressPercentage: number,
   userLevel: string,
-  allTopicsFlat: { mod: Module, topic: Topic }[]
+  allTopicsFlat: { mod: Module, topic: Topic }[],
+  currentCourseData: Module[]
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(window.innerWidth >= 768);
   const [searchQuery, setSearchQuery] = useState('');
@@ -339,15 +341,15 @@ const DocsPage = ({
   };
 
   const filteredData = useMemo(() => {
-    if (!searchQuery) return COURSE_DATA;
-    return COURSE_DATA.map(mod => ({
+    if (!searchQuery) return currentCourseData;
+    return currentCourseData.map(mod => ({
       ...mod,
       topics: mod.topics.filter(t => 
         t.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         mod.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
     })).filter(mod => mod.topics.length > 0);
-  }, [searchQuery]);
+  }, [searchQuery, currentCourseData]);
 
   return (
     <div className="flex h-screen bg-white pt-16">
@@ -756,18 +758,32 @@ const AboutCreatorPage = () => {
 
 export default function App() {
   const [page, setPage] = useState<Page>('landing');
-  const [activeModule, setActiveModule] = useState(COURSE_DATA[0]);
-  const [activeTopic, setActiveTopic] = useState(COURSE_DATA[0].topics[0]);
+  const [courseType, setCourseType] = useState<'web' | 'python'>('web');
+  const [showCourseModal, setShowCourseModal] = useState(false);
+  
+  const currentCourseData = useMemo(() => {
+    return courseType === 'web' ? WEB_DEV_COURSE : PYTHON_AI_COURSE;
+  }, [courseType]);
+
+  const [activeModule, setActiveModule] = useState(currentCourseData[0]);
+  const [activeTopic, setActiveTopic] = useState(currentCourseData[0].topics[0]);
+
+  // Update active module/topic when switching courses
+  useEffect(() => {
+    setActiveModule(currentCourseData[0]);
+    setActiveTopic(currentCourseData[0].topics[0]);
+  }, [courseType, currentCourseData]);
+
   const [completedTopics, setCompletedTopics] = useState<string[]>(() => {
     const saved = localStorage.getItem('completedTopics');
     return saved ? JSON.parse(saved) : [];
   });
 
   const allTopicsFlat = useMemo(() => {
-    return COURSE_DATA.flatMap(mod => 
+    return currentCourseData.flatMap(mod => 
       mod.topics.map(topic => ({ mod, topic }))
     );
-  }, []);
+  }, [currentCourseData]);
 
   const totalTopicsCount = allTopicsFlat.length;
   const progressPercentage = totalTopicsCount > 0 
@@ -799,7 +815,15 @@ export default function App() {
   };
 
   const handleViewProjectModule = (moduleId: string) => {
-    const mod = COURSE_DATA.find(m => m.id === moduleId);
+    // Search in both courses
+    let mod = WEB_DEV_COURSE.find(m => m.id === moduleId);
+    if (mod) {
+      setCourseType('web');
+    } else {
+      mod = PYTHON_AI_COURSE.find(m => m.id === moduleId);
+      if (mod) setCourseType('python');
+    }
+
     if (mod) {
       setActiveModule(mod);
       setActiveTopic(mod.topics[0]);
@@ -813,11 +837,73 @@ export default function App() {
       <Navbar 
         currentPage={page} 
         onNavigate={setPage} 
-        onOpenDocs={() => setPage('docs')}
+        onOpenDocs={() => setShowCourseModal(true)}
         progressPercentage={progressPercentage}
         userLevel={userLevel}
       />
       
+      <AnimatePresence>
+        {showCourseModal && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowCourseModal(false)}
+              className="absolute inset-0 bg-brand-blue-dark/60 backdrop-blur-md"
+            />
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              className="relative w-full max-w-2xl bg-white rounded-[3rem] p-8 lg:p-12 shadow-2xl overflow-hidden"
+            >
+              <button 
+                onClick={() => setShowCourseModal(false)}
+                className="absolute top-6 right-6 p-2 rounded-full bg-slate-50 text-slate-400 hover:text-brand-blue transition-colors"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="text-center mb-10">
+                <h2 className="text-3xl lg:text-4xl font-extrabold text-brand-blue-dark mb-2">Select Your Journey</h2>
+                <p className="text-slate-500">Pick a course to start your transformation</p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <button 
+                  onClick={() => { setCourseType('web'); setPage('docs'); setShowCourseModal(false); }}
+                  className="group p-8 rounded-[2rem] border-2 border-slate-100 bg-slate-50 hover:bg-white hover:border-brand-blue hover:shadow-xl transition-all text-left"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-brand-blue mb-6 group-hover:scale-110 transition-transform">
+                    <Layout size={28} />
+                  </div>
+                  <h3 className="text-xl font-black text-brand-blue-dark mb-2">AI Web Development</h3>
+                  <p className="text-slate-500 text-xs mb-4">Frontend, Backend & Next.js AI Apps</p>
+                  <div className="flex items-center gap-1 text-brand-blue font-bold text-xs">
+                    Start Learning <ArrowRight size={14} />
+                  </div>
+                </button>
+
+                <button 
+                  onClick={() => { setCourseType('python'); setPage('docs'); setShowCourseModal(false); }}
+                  className="group p-8 rounded-[2rem] border-2 border-slate-100 bg-slate-50 hover:bg-white hover:border-gold hover:shadow-xl transition-all text-left"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center text-gold-dark mb-6 group-hover:scale-110 transition-transform text-gold-dark">
+                    <Terminal size={28} />
+                  </div>
+                  <h3 className="text-xl font-black text-brand-blue-dark mb-2">AI Python</h3>
+                  <p className="text-slate-500 text-xs mb-4">Foundations, Agents & FastAPI AI</p>
+                  <div className="flex items-center gap-1 text-gold-dark font-bold text-xs">
+                    Start Learning <ArrowRight size={14} />
+                  </div>
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       <AnimatePresence mode="wait">
         {page === 'landing' ? (
           <motion.div
@@ -828,10 +914,53 @@ export default function App() {
             transition={{ duration: 0.3 }}
           >
             <Hero 
-              onStartLearning={() => setPage('docs')} 
+              onStartLearning={() => setShowCourseModal(true)} 
               onExploreProjects={() => setPage('projects')} 
             />
             
+            {/* Course Selection Section */}
+            <div className="max-w-7xl mx-auto px-4 py-10 relative">
+               <div className="text-center mb-16">
+                 <h2 className="text-3xl lg:text-4xl font-extrabold text-brand-blue-dark mb-4">Choose Your Path</h2>
+                 <p className="text-slate-500">Select a course to see the curriculum</p>
+               </div>
+               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                 <button 
+                  onClick={() => { setCourseType('web'); setPage('docs'); }}
+                  className={cn(
+                    "p-10 rounded-[2.5rem] border-2 transition-all text-left group",
+                    courseType === 'web' ? "border-brand-blue bg-white shadow-2xl" : "border-slate-100 bg-slate-50 hover:border-brand-blue/30"
+                  )}
+                 >
+                   <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-brand-blue mb-6 group-hover:scale-110 transition-transform">
+                     <Layout size={32} />
+                   </div>
+                   <h3 className="text-2xl font-black text-brand-blue-dark mb-2">AI Web Development</h3>
+                   <p className="text-slate-500 text-sm mb-6">Master HTML, CSS, TypeScript, and Next.js to build professional web applications.</p>
+                   <div className="flex items-center gap-2 text-brand-blue font-bold text-sm">
+                     View 5 Modules <ArrowRight size={16} />
+                   </div>
+                 </button>
+
+                 <button 
+                  onClick={() => { setCourseType('python'); setPage('docs'); }}
+                  className={cn(
+                    "p-10 rounded-[2.5rem] border-2 transition-all text-left group",
+                    courseType === 'python' ? "border-gold bg-white shadow-2xl" : "border-slate-100 bg-slate-50 hover:border-gold/30"
+                  )}
+                 >
+                   <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center text-gold-dark mb-6 group-hover:scale-110 transition-transform text-gold-dark">
+                     <Terminal size={32} />
+                   </div>
+                   <h3 className="text-2xl font-black text-brand-blue-dark mb-2">Python & AI</h3>
+                   <p className="text-slate-500 text-sm mb-6">Learn Python foundations, logic, AI agents, and backend development with FastAPI.</p>
+                   <div className="flex items-center gap-2 text-gold-dark font-bold text-sm">
+                     View 6 Phases <ArrowRight size={16} />
+                   </div>
+                 </button>
+               </div>
+            </div>
+
             {/* Features Section - Styled with Theme */}
             <div className="max-w-7xl mx-auto px-4 py-32 relative">
                <div className="text-center mb-20 relative">
@@ -879,10 +1008,10 @@ export default function App() {
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {COURSE_DATA.slice(0, 8).map((mod, i) => (
+                  {currentCourseData.slice(0, 8).map((mod, i) => (
                     <div key={i} className="p-8 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-gold/30 transition-all cursor-pointer group">
                       <div className="text-gold text-[10px] font-extrabold mb-4 uppercase tracking-widest opacity-60 group-hover:opacity-100">Step {i + 1}</div>
-                      <h4 className="text-white font-extrabold text-xl group-hover:text-gold transition-colors">{mod.title.split(': ')[1]}</h4>
+                      <h4 className="text-white font-extrabold text-xl group-hover:text-gold transition-colors">{mod.title.split(': ')[1] || mod.title}</h4>
                     </div>
                   ))}
                 </div>
@@ -925,6 +1054,7 @@ export default function App() {
               progressPercentage={progressPercentage}
               userLevel={userLevel}
               allTopicsFlat={allTopicsFlat}
+              currentCourseData={currentCourseData}
             />
           </motion.div>
         ) : page === 'projects' ? (

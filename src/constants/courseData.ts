@@ -43,31 +43,31 @@ export const projectsData = [
   },
   {
     title: "AI Chatbot Agent",
-    module: "Python & AI",
-    targetModuleId: "python-ai",
+    module: "Phase 4: AI & APIs",
+    targetModuleId: "py-ai-section",
     description: "Connect Python to Gemini API for a smart conversational assistant.",
     difficulty: "Expert",
     tech: ["Python", "Streamlit", "Gemini API"]
   },
   {
     title: "Career Mentor AI",
-    module: "AI Agents",
-    targetModuleId: "python-ai",
+    module: "Phase 4: AI & APIs",
+    targetModuleId: "py-ai-section",
     description: "A multi-agent system that analyzes resumes and gives career advice.",
     difficulty: "Master",
     tech: ["Python", "AI Agents", "Streamlit"]
   },
   {
-    title: "Spec-Driven SaaS",
-    module: "SD-Development",
-    targetModuleId: "spec-driven-dev",
-    description: "Full end-to-end product built using Spec-Driven Development workflow.",
+    title: "AI Web SaaS",
+    module: "Phase 5: Backend & Advanced",
+    targetModuleId: "py-advanced-career",
+    description: "Full end-to-end product built using FastAPI and Streamlit.",
     difficulty: "Master",
-    tech: ["Spec-Driven", "Gemini CLI", "React"]
+    tech: ["FastAPI", "Python", "Streamlit"]
   }
 ];
 
-export const COURSE_DATA: Module[] = [
+export const WEB_DEV_COURSE: Module[] = [
   {
     id: "intro",
     title: "Module 1: Computer Basics & Software Setup",
@@ -233,8 +233,21 @@ export const COURSE_DATA: Module[] = [
         beginnerFriendly: true
       },
       {
+        id: "html-linkedin",
+        title: "05. LinkedIn: Your Web Identity 🌐",
+        explanation: "Professional Web Developer ban-nay ke liye aapka 'Digital Presence' hona bohot zaroori hai. LinkedIn pe apna network banana aur jo aap HTML/CSS seekh rahe hain uski journey share karna aapko employers ki nazar mein laata hai. 'Jo dikhta hai, wo bikta hai!'",
+        example: "Real Life: LinkedIn aik aisi exhibition gallery hai jahan aap apna kaam (Web Layouts) dunya ko dikhate hain.",
+        tasks: [
+          "LinkedIn profile banayein (agar nahi hai).",
+          "Headline mein 'Full Stack Web Development Trainee @ Khipro Academy' likhein.",
+          "Pehli HTML setup ki screenshot LinkedIn pe post karein."
+        ],
+        homework: ["Follow 5 tech companies you want to work for."],
+        beginnerFriendly: true
+      },
+      {
         id: "html-formatting",
-        title: "05. Text Decoration: Formatting Tags",
+        title: "06. Text Decoration: Formatting Tags",
         explanation: "Text ko highlight ya bold karne ke liye <strong> aur <b> use hote hain. Italic ke liye <em> aur <i>. Subscript (H₂O) aur Superscript (X²) ke liye <sub> aur <sup> use hote hain.",
         code: "<p>Water is <strong>H<sub>2</sub>O</strong></p>\n<p>Formula of math is <em>X<sup>2</sup></em></p>",
         language: "html",
@@ -249,7 +262,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
         id: "html-anchors",
-        title: "06. Connections: Anchors & Links",
+        title: "07. Connections: Anchors & Links",
         explanation: "<a> tag se hum dunya bhar ki websites connect karte hain. 'href' attribute destination file ka address hota hai. Target='_blank' se link new tab mein khul jata hai.",
         example: "Links bilkul digital roads ki tarah hain jo aik page ko dusre se jortay hain.",
         code: '<a href="https://google.com" target="_blank">Search here</a>',
@@ -265,7 +278,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
         id: "html-paths",
-        title: "07. Paths: Absolute vs Relative",
+        title: "08. Paths: Absolute vs Relative",
         explanation: "Absolute Path pura URL hota hai (http://...). Relative Path woh hota hai jo aap ki apni files ke darmiyan hota hai (./images/photo.jpg). Professional developers hamesha relative paths use karte hain.",
         tasks: [
           "Identify an absolute path on a live website.",
@@ -278,7 +291,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
         id: "html-images",
-        title: "08. Visuals: Mastering the <img> Tag",
+        title: "09. Visuals: Mastering the <img> Tag",
         explanation: "Images ke liye <img> tag use hota hai. 'src' image ka path hai aur 'alt' text tab show hota hai jab net slow ho ya image dunya mein exist na karey. Ye SEO ke liye bohot zaroori hai.",
         example: "Alt text bilkul andhay logon ke liye tasveer ka aankhon dekha haal (description) hai.",
         code: '<img src="https://example.com/logo.png" alt="Company Logo" width="200">',
@@ -294,7 +307,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
         id: "html-lists",
-        title: "09. Lists: Unordered & Ordered",
+        title: "10. Lists: Unordered & Ordered",
         explanation: "Unordered (<ul>) bullet points ke liye aur Ordered (<ol>) numbered list ke liye use hota hai. Har item <li> ke andar hota hai.",
         code: "<ul>\n  <li>HTML</li>\n  <li>CSS</li>\n</ul>\n<ol>\n  <li>Buy PC</li>\n  <li>Start Course</li>\n</ol>",
         language: "html",
@@ -309,7 +322,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
         id: "html-tables-basic",
-        title: "10. Data Representation: Tables Part 1",
+        title: "11. Data Representation: Tables Part 1",
         explanation: "Tables data ko rows (<tr>) aur columns (<td>) mein dikhane ke liye hote hain. Table headers ke liye <th> use hota hai.",
         code: "<table>\n  <tr>\n    <th>Name</th>\n    <th>Age</th>\n  </tr>\n  <tr>\n    <td>Zubair</td>\n    <td>22</td>\n  </tr>\n</table>",
         language: "html",
@@ -324,7 +337,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
         id: "html-tables-adv",
-        title: "11. Rowspan & Colspan: Advanced Tables",
+        title: "12. Rowspan & Colspan: Advanced Tables",
         explanation: "Colspan aik cell ko multiple columns cover karne deta hai, aur Rowspan vertically multiple rows merge kar deta hai.",
         example: "Jaisay Excel mein 'Merge Cells' hota hai, HTML mein ye attributes wahi kaam karte hain.",
         code: '<tr><td colspan="2">Total Marks</td></tr>',
@@ -340,7 +353,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
         id: "html-forms-intro",
-        title: "12. User Interaction: The <form> Tag",
+        title: "13. User Interaction: The <form> Tag",
         explanation: "Forms se hum user ka data (Login, Signup) collect karte hain. Isme 'Action' aur 'Method' attributes bohot important hote hain jo batate hain ke data kahan jayega.",
         code: '<form action="/submit-data" method="POST">\n  <!-- Inputs go here -->\n</form>',
         language: "html",
@@ -355,7 +368,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
         id: "html-input-types",
-        title: "13. Input Power: Basic Text & Passwords",
+        title: "14. Input Power: Basic Text & Passwords",
         explanation: "Common inputs mein type='text' simple text ke liye aur type='password' bullets dikhane ke liye use hota hai.",
         code: '<label>Email:</label>\n<input type="email" placeholder="abc@mail.com">\n<br>\n<input type="password" placeholder="Min 8 chars">',
         language: "html",
@@ -370,7 +383,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
         id: "html-input-advanced",
-        title: "14. Modern Inputs: Date, Color & Number",
+        title: "15. Modern Inputs: Date, Color & Number",
         explanation: "HTML5 ne inputs ko bohot advance kar diya hai. Ab hum type='date' se calendar aur type='color' se color picker generate kar saktay hain.",
         code: '<input type="date">\n<input type="checkbox"> I Agree\n<input type="radio" name="gender"> Male',
         language: "html",
@@ -385,7 +398,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
           id: "html-textarea-select",
-          title: "15. Large Data: Textarea & Dropdowns",
+          title: "16. Large Data: Textarea & Dropdowns",
           explanation: "Baray message ke liye <textarea> aur list mein se select karne ke liye <select> tag use hota hai.",
           code: '<select>\n  <option>Karachi</option>\n  <option>Khipro</option>\n</select>\n<textarea rows="4">Write message...</textarea>',
           language: "html",
@@ -400,7 +413,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
           id: "html-semantic-mastery",
-          title: "16. Semantic HTML: SEO & Web Structure",
+          title: "17. Semantic HTML: SEO & Web Structure",
           explanation: "Semantic tags browser ko page ka maqsad samjhate hain. <header> top ke liye, <nav> menu ke liye, <main> content ke liye aur <footer> bottom ke liye.",
           example: "Sada HTML bilkul kachay ghar jaisa hai, semantic tags use karna use complete puka ghar banata hai jo Google ko pasand ata hai.",
           tasks: [
@@ -414,7 +427,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
           id: "html-iframes",
-          title: "17. Deep Integration: Iframes & Maps",
+          title: "18. Deep Integration: Iframes & Maps",
           explanation: "<iframe> se hum kisi doosri website ka page (jaise Google Maps ya YouTube video) apni website mein dikha saktay hain.",
           code: '<iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>',
           language: "html",
@@ -429,7 +442,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
           id: "html-meta-seo",
-          title: "18. Meta Tags: SEO Basics",
+          title: "19. Meta Tags: SEO Basics",
           explanation: "<meta> tags HTML file ke <head> mein hote hain. Ye batate hain ke website kis barey mein hai aur mobile pe kaisi dikhegi (Viewport).",
           code: '<meta name="description" content="Best Web Lab in Khipro">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">',
           language: "html",
@@ -444,7 +457,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
           id: "html-symbols",
-          title: "19. Special Characters & Entities",
+          title: "20. Special Characters & Entities",
           explanation: "HTML mein kuch symbols reserved hain (jaise < ya >). Unhein likhne ke liye hum '&lt;' ya '&gt;' use karte hain. Copyright ka symbol (&copy;) bhi aise hi banta hai.",
           code: "<p>Copyright &copy; 2026 Skill Bridge Lab</p>\n<p>Greater than sign is &gt;</p>",
           language: "html",
@@ -459,7 +472,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
           id: "html-best-practices",
-          title: "20. Final: Best Practices & Clean Code",
+          title: "21. Final: Best Practices & Clean Code",
           explanation: "Code likhne ka sahi tarika: 1) Tags hamesha lowercase hon, 2) Proper indentation (space) ho, 3) Hamesha closing tags lagayen.",
           tasks: [
               "Validate your HTML using 'W3C Validator' online.",
@@ -472,7 +485,7 @@ export const COURSE_DATA: Module[] = [
       },
       {
           id: "github-basics",
-          title: "21. GitHub: Hosting your Code Online",
+          title: "22. GitHub: Hosting your Code Online",
           explanation: "Git aapke computer pe code save karta hai, lekin GitHub wo 'Cloud' hai jahan aap apna code internet pe rakhte hain taake dunya dekh sake. Isay 'Developer ki Social Media' bhi kehte hain. Jab aap apna code GitHub pe 'Push' karte hain, to wo mahfooz ho jata hai aur aap apne dosto ke sath mil kar kaam kar saktay hain.",
           example: "Git aapki hard drive hai, aur GitHub aapki Google Drive ya Cloud storage hai jahan se koi bhi link ke zariye code dekh sakta hai.",
           code: "# Pushing code for the first time:\ngit init                   # Nayi repository banana\ngit add .                  # Saari files stage karna\ngit commit -m 'Initial'    # Message likhna\ngit remote add origin URL  # GitHub se jorna\ngit push -u origin main    # Code cloud pe bhejna\n\n# Updating code:\ngit add .\ngit commit -m 'Fixed bug'\ngit push                   # New changes bhejna",
@@ -1404,600 +1417,696 @@ btn.addEventListener('click', () => {
               tasks: ["Look for 'Next.js' jobs on Upwork.", "Write a sample proposal for a Next.js Landing Page."],
               homework: ["Write down your personal goal for the next 6 months."],
               beginnerFriendly: true
-          }
-      ]
-  },
-  {
-      id: "python-ai",
-      title: "Module 6: Python, Streamlit & AI Agents",
-      topics: [
-          {
-              id: "py-why",
-              title: "01. Why Python? (The Future Language)",
-              explanation: "Python dunya ki sab se mashhoor aur asaan programming language hai. Ye AI, Data Science, aur Web Development mein sab se zyada use hoti hai. Iska syntax English jaisa hai, is liye beginners ke liye best hai.",
-              example: "Instagram ka backend, Spotify ki recommendations, aur ChatGPT jaise AI tools Python mein hi bane hain.",
-              tasks: ["3 reasons likho Python seekhne ke.", "Search: What is the rank of Python in programming languages?"],
-              homework: ["Explain why Python is better for AI than other languages."],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-install",
-              title: "02. Install Python & Setup: Ready for Action",
-              explanation: "Python use karne ke liye aapko official website 'python.org' se use download karna hoga. VS Code mein Python extension install kar ke aap coding shuru kar saktay hain.",
-              code: "# Python version check karne ke liye terminal mein likhein:\npython --version",
-              language: "bash",
-              tasks: ["Install Python in your system.", "Setup VS Code with Python extension."],
-              homework: ["What is an Interpreter in Python?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-hello",
-              title: "03. First Program: Hello World",
-              explanation: "Python mein message print karna bohot easy hai. Sirf 'print()' function use hota hai. Koi semicolon (;) lagane ki zaroorat nahi hoti.",
-              code: "print('Hello World, Python is Awesome!')",
-              language: "python",
-              tasks: ["Print your own name and city.", "Try printing a number without quotes."],
-              homework: ["What is the difference between print('5') and print(5)?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-variables",
-              title: "04. Variables: Containers for Data",
-              explanation: "Variables mein hum data save karte hain. Python mein type batane ki zaroorat nahi hoti, ye khud samajh jata hai.",
-              code: "name = 'Sami'\nage = 18\nprint(name, age)",
-              language: "python",
-              tasks: ["Create variables for your favorite hobby and birth year.", "Change the value of a variable and print it."],
-              homework: ["What are the rules for naming variables in Python?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-types",
-              title: "05. Data Types: The 4 Pillars",
-              explanation: "Python mein main data types ye hain: 1) String (Text), 2) Int (Poora Number), 3) Float (Decimal wala number), 4) Boolean (True/False).",
-              code: "price = 99.99 # Float\nis_active = True # Boolean\nscore = 100 # Int",
-              language: "python",
-              tasks: ["Create one variable for each data type.", "Check type using type() function."],
-              homework: ["Explain the difference between Int and Float with examples."],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-casting",
-              title: "06. Type Casting: Changing Types",
-              explanation: "Baaz auqat humein aik type ko doosri type mein badalna parta hai. Jaise String '18' ko Integer 18 mein.",
-              code: "age_str = '18'\nage_int = int(age_str)\nprint(age_int + 2) # Now we can do math",
-              language: "python",
-              tasks: ["Convert a float to an int.", "Convert an int to a string."],
-              homework: ["What happens if you try to convert 'abc' to an int?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-io",
-              title: "07. Input/Output: Talking to User",
-              explanation: "User se data 'input()' function se liya jata hai. Yaad rahe input hamesha string deta hai.",
-              code: "user_name = input('Enter your name: ')\nprint('Welcome ' + user_name)",
-              language: "python",
-              tasks: ["Ask user for their age and print it.", "Ask for two numbers and print their sum (casting needed)."],
-              homework: ["How to take multiple inputs in one line?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-operators",
-              title: "08. Operators: Math & Logic",
-              explanation: "Python mein Basic Math (+, -, *, /) ke ilawa Comparison (==, !=, >, <) aur Logical (and, or, not) operators hote hain.",
-              code: "x = 10\ny = 3\nprint(x // y) # Integer Division\nprint(x % y)  # Remainder",
-              language: "python",
-              tasks: ["Calculate the area of a circle (r=5).", "Use comparison operator to check if 10 is equal to 10."],
-              homework: ["What is the difference between / and // in Python?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-conditions",
-              title: "09. Conditions: If/Else (Faisla)",
-              explanation: "Python mein indentation (space) bohot important hai. If/Else se hum decisions lete hain.",
-              code: "age = 20\nif age >= 18:\n    print('Adult')\nelse:\n    print('Minor')",
-              language: "python",
-              tasks: ["Check if a number is even or odd.", "Grade system: Marks > 90 (A), > 70 (B), else (C)."],
-              homework: ["What is 'elif' used for?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-loops",
-              title: "10. Loops: Repeatition (for / while)",
-              explanation: "Aik hi kaam baar baar karne ke liye loops use hote hain. 'for' loop counting ke liye aur 'while' condition ke liye.",
-              code: "for i in range(5):\n    print('Iteration:', i)",
-              language: "python",
-              tasks: ["Print table of 2 using for loop.", "Print numbers from 10 to 1 backwords."],
-              homework: ["What is an Infinite Loop and how to avoid it?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-functions",
-              title: "11. Functions: Reusable Code",
-              explanation: "Function ko 'def' keyword se banate hain. Ye code ko clean aur reusable banata hai.",
-              code: "def greet(name):\n    return 'Hi ' + name\n\nprint(greet('Sami'))",
-              language: "python",
-              tasks: ["Create a function to calculate square of a number.", "Create a function with two parameters."],
-              homework: ["What is the purpose of 'return' keyword?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-lists",
-              title: "12. Lists: Collection of Items",
-              explanation: "Lists mein hum bohot saari values rakh saktay hain. Ye mutable (changeable) hoti hain.",
-              code: "fruits = ['apple', 'mango', 'banana']\nfruits.append('kiwi')\nprint(fruits[0])",
-              language: "python",
-              tasks: ["Create a list of your 5 favorite movies.", "Remove the second item from your list."],
-              homework: ["What is the difference between append() and extend()?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-tuples",
-              title: "13. Tuples: Constant Lists",
-              explanation: "Tuples lists jaisi hoti hain magar inki values change nahi ki ja saktin (Immutable). Small brackets () use hote hain.",
-              code: "coords = (10, 20)\n# coords[0] = 15 # Error!",
-              language: "python",
-              tasks: ["Create a tuple of 7 days of the week.", "Try to change a value and see the error."],
-              homework: ["When should we use a Tuple instead of a List?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-dicts",
-              title: "14. Dictionaries: Key-Value Pairs",
-              explanation: "Dictionary mein hum data ko key aur value ke sath rakhte hain. Jaise digital dictionary.",
-              code: "user = {'name': 'Sami', 'age': 18}\nprint(user['name'])",
-              language: "python",
-              tasks: ["Create a dictionary of a car with make, model, year.", "Add a new key 'color' to the car dictionary."],
-              homework: ["How to get all keys of a dictionary?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-sets",
-              title: "15. Sets: Unique Items",
-              explanation: "Sets mein duplicates allowed nahi hote. Ye un-ordered collections hain.",
-              code: "nums = {1, 2, 2, 3} # Result: {1, 2, 3}",
-              language: "python",
-              tasks: ["Create a set from a list that has duplicate numbers.", "Check if an item exists in a set."],
-              homework: ["Explain the difference between List and Set."],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-string-methods",
-              title: "16. String Methods: Text Mastery",
-              explanation: "Python mein strings per bohot operation ho saktay hain. upper, lower, replace, etc.",
-              code: "text = 'python is fun'\nprint(text.upper())\nprint(text.replace('fun', 'great'))",
-              language: "python",
-              tasks: ["Convert a sentence to Title Case.", "Find the index of a word in a string."],
-              homework: ["What does strip() method do?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "py-files",
-              title: "17. File Handling: Persistent Storage",
-              explanation: "Files ko read aur write karna Python mein bohot asaan hai. 'with open' use karna best practice hai.",
-              code: "with open('note.txt', 'w') as f:\n    f.write('Hello Students!')",
-              language: "python",
-              tasks: ["Create a file and write your bio in it.", "Read the same file and print content."],
-              homework: ["What are 'r', 'w', and 'a' modes in file handling?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "py-exceptions",
-              title: "18. Exception Handling: Anti-Crash",
-              explanation: "Agar code mein error aa jaye to website crash hone se bachane ke liye try/except use hota hai.",
-              code: "try:\n    res = 10 / 0\nexcept ZeroDivisionError:\n    print('Can not divide by zero!')",
-              language: "python",
-              tasks: ["Handle a ValueError when user inputs text instead of number.", "Use 'finally' block for a cleanup task."],
-              homework: ["Why should we use specific exception names instead of just 'except'?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "py-modules",
-              title: "19. Modules & Packages: Using Others' Code",
-              explanation: "Baahir ki libraries (jaise math, random) use karne ke liye 'import' keyword use hota hai.",
-              code: "import math\nprint(math.sqrt(16))",
-              language: "python",
-              tasks: ["Use 'random' module to print a random number.", "Import 'datetime' and print today's date."],
-              homework: ["How to install external libraries using pip?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "py-venv",
-              title: "20. Virtual Environment: Project Isolation",
-              explanation: "Har project ke liye alag environment banana zarori hai taake versions mix na hon.",
-              code: "python -m venv myenv\n# Activate: myenv\\Scripts\\activate (Windows)",
-              language: "bash",
-              tasks: ["Create a virtual environment for your project.", "Activate it and check pip list."],
-              homework: ["Why is a virtual environment important?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "py-oop",
-              title: "21. OOP Intro: Object Oriented Programming",
-              explanation: "OOP mein hum 'Classes' (Blueprints) aur 'Objects' (Real items) banate hain. Ye real-world modeling ke liye hai.",
-              code: "class Dog:\n    def bark(self):\n        print('Woof!')\n\nmy_dog = Dog()\nmy_dog.bark()",
-              language: "python",
-              tasks: ["Create a class 'Car' with a method 'drive'.", "Create two objects of the Car class."],
-              homework: ["What is 'self' keyword in Python classes?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "py-constructor",
-              title: "22. Constructor: Initialization",
-              explanation: "'__init__' function constructor hota hai jo tab chalta hai jab object banta hai.",
-              code: "class Person:\n    def __init__(self, name):\n        self.name = name\n\np1 = Person('Ali')",
-              language: "python",
-              tasks: ["Create a Student class that takes name and marks in constructor.", "Print the student details from object."],
-              homework: ["Can a class have multiple constructors in Python?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "py-inheritance",
-              title: "23. Inheritance: Reusing Classes",
-              explanation: "Aik class doosri class ki properties aur methods inherit kar sakti hai.",
-              code: "class Animal:\n    def eat(self): print('Eating...')\n\nclass Cat(Animal):\n    pass",
-              language: "python",
-              tasks: ["Create a 'Vehicle' parent class and 'Cycle' child class.", "Override a method in child class."],
-              homework: ["What is Multiple Inheritance?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "py-encapsulation",
-              title: "24. Encapsulation: Hiding Data",
-              explanation: "Data ko protect karne ke liye hum use private banate hain (using double underscore __).",
-              code: "class Bank:\n    def __init__(self):\n        self.__balance = 1000",
-              language: "python",
-              tasks: ["Create a class with a private attribute.", "Create a public method to access that private attribute."],
-              homework: ["Difference between Public, Private and Protected in Python."],
-              beginnerFriendly: false
-          },
-          {
-              id: "py-mini-project",
-              title: "25. Mini Project: Student Marks System",
-              explanation: "Aik system banaiye jahan students ke marks input houn aur final result (Pass/Fail) calculcate ho.",
-              tasks: ["Use Classes to represent a Student.", "Store data in a list.", "Print a report card at the end."],
-              homework: ["Add functionality to save results to a text file."],
-              beginnerFriendly: false
-          },
-          {
-              id: "st-intro",
-              title: "26. What is Streamlit? (Web Apps in Python)",
-              explanation: "Streamlit aik aisi library hai jo Python code ko fast web apps mein badal deti hai. Aapko HTML/CSS seekhne ki zaroorat nahi.",
-              example: "Data dashboards aur AI chatbots banane ke liye ye best tool hai.",
-              tasks: ["Search for Streamlit app gallery.", "List 2 benefits of using Streamlit."],
-              homework: ["Explain the difference between Flask and Streamlit."],
-              beginnerFriendly: true
-          },
-          {
-              id: "st-install",
-              title: "27. Install Streamlit: Your New UI Framework",
-              explanation: "Terminal mein sirf aik command se Streamlit install ho jata hai.",
-              code: "pip install streamlit",
-              language: "bash",
-              tasks: ["Install streamlit in your virtual environment.", "Verify installation using 'streamlit hello'."],
-              homework: ["What are requirements.txt files?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "st-first-app",
-              title: "28. First Streamlit App: Hello UI",
-              explanation: "Python file bana kar use run karna hota hai 'streamlit run app.py' command se.",
-              code: "import streamlit as st\nst.title('My First AI App')\nst.write('Welcome to the future!')",
-              language: "python",
-              tasks: ["Create a simple welcome app.", "Run the app and see it in your browser."],
-              homework: ["How to stop the streamlit server in terminal?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "st-inputs",
-              title: "29. Text & Input: Interactive UI",
-              explanation: "Input lena Streamlit mein line of code ka kaam hai. Text, Number, Selectbox—sab available hai.",
-              code: "name = st.text_input('What is your name?')\nst.write(f'Hello {name}')",
-              language: "python",
-              tasks: ["Create a form with Name, Age and City inputs.", "Show the input values in a colored box."],
-              homework: ["Search: How to create a slider in Streamlit?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "st-buttons",
-              title: "30. Buttons & Interaction: Triggering Logic",
-              explanation: "Button pe click hone per hi koi logic execute karna ka tareeqa.",
-              code: "if st.button('Click Me'):\n    st.success('Button clicked!')",
-              language: "python",
-              tasks: ["Create a button that reveals a secret message.", "Create a reset button to clear everything."],
-              homework: ["What is st.session_state?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "st-layout",
-              title: "31. Layout & UI: Columns & Sidebar",
-              explanation: "Website ko professional banane ke liye columns aur sidebars use karein.",
-              code: "col1, col2 = st.columns(2)\nwith col1: st.write('Left side')\nst.sidebar.title('Settings')",
-              language: "python",
-              tasks: ["Add a sidebar with 'Home', 'About' buttons.", "Create a 3-column layout to show features."],
-              homework: ["How to change the theme (Light/Dark) in Streamlit?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "st-calc-app",
-              title: "32. Project: Smart Calculator UI",
-              explanation: "Streamlit use kar ke aik functional calculator banayein jo numbers aur symbols handling kare.",
-              tasks: ["Use st.number_input for inputs.", "Use a selectbox for operations (+, -, *, /).", "Display result in a big header."],
-              homework: ["Add error handling for division by zero in UI."],
-              beginnerFriendly: true
-          },
-          {
-              id: "ai-api-intro",
-              title: "33. What is API? (The Digital Bridge)",
-              explanation: "API (Application Programming Interface) do apps ko aapas mein jorta hai. AI model ko use karne ke liye hum Google ya OpenAI ki API use karte hain.",
-              example: "Jab aap Google Maps use karte hain kisi app mein, to wo API use kar rahi hoti hai.",
-              tasks: ["Search for 'Gemini API' and see its use.", "What is an API Key?"],
-              homework: ["Why are APIs called 'The Glue of Internet'?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "ai-api-call",
-              title: "34. API Call in Python: Fetching AI Brain",
-              explanation: "Python mein 'requests' library se hum kisi bhi AI server se baat kar saktay hain.",
-              code: "import requests\nres = requests.get('https://api.example.com/data')\nprint(res.json())",
-              language: "python",
-              tasks: ["Install requests library.", "Fetch advice from a free API (like Advice Slip)."],
-              homework: ["What is JSON formatting?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "ai-agent-concept",
-              title: "35. What are AI Agents? (The Thinkers)",
-              explanation: "AI Agent sirf aik chatbot nahi hota, wo 'Action' bhi le sakta hai. Wo internet search kar sakta hai, files read kar sakta hai, aur calculation kar sakta hai.",
-              example: "Aik agent jo aapke email parh kar khud unka reply draft kare.",
-              tasks: ["List 3 differences between a simple Chatbot and an AI Agent.", "Search: What is AutoGPT?"],
-              homework: ["Explain the concept of 'Agency' in AI Agents."],
-              beginnerFriendly: true
-          },
-          {
-              id: "ai-basic-agent",
-              title: "36. Basic AI Agent: Input-Output Loop",
-              explanation: "Basic agent system jo input leti hai, process karti hai, aur specific task complete karti hai.",
-              tasks: ["Design a logic for a 'Weather Agent'.", "Explain how an agent uses 'Tools'."],
-              homework: ["What is ReAct (Reason + Act) pattern?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "ai-prompt-eng",
-              title: "37. Prompt Engineering: Smart Instructions",
-              explanation: "AI ko sahi tareeqay se instruction dena aik art hai. System prompts aur User prompts mein farq samjhein.",
-              code: "System: You are a professional doctor.\nUser: I have a headache.",
-              language: "markdown",
-              tasks: ["Write a perfect prompt for a Coding Mentor AI.", "Use 'Chain of Thought' technique in a prompt."],
-              homework: ["What is Zero-Shot vs Few-Shot prompting?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "ai-st-chatbot",
-              title: "38. Project: AI Chatbot (AI + Streamlit)",
-              explanation: "Ab hum Streamlit UI aur AI Model (Gemini/OpenAI) ko join karein ge.",
-              tasks: ["Setup a simple chat UI in Streamlit.", "Add AI response logic using an API."],
-              homework: ["How to manage chat history in Streamlit?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "ai-multi-agent",
-              title: "39. Multi-Agent Concept: Team of AI",
-              explanation: "Aik agent nahi, balkay poori team! Aik Manager Agent, aik Researcher Agent, aur aik Writer Agent.",
-              example: "Aik project manager agent researcher se data mangta hai aur writer ko blog likhne ka kehta hai.",
-              tasks: ["Research on 'CrewAI' or 'LangGraph'.", "Design a flow for a content creation team of agents."],
-              homework: ["Why is Multi-Agent system better for complex tasks?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "ai-final-project",
-              title: "40. Master Project: Career Mentor AI",
-              explanation: "Aik complete tool jo user ka resume dekhe, career advice de, aur interview ki practice karwaye.",
-              tasks: ["Build Career Advice UI.", "Implement PDF parser to read resumes.", "Add AI Agent to give personalized feedback."],
-              homework: ["Write a small report on your final project journey."],
-              beginnerFriendly: false
-          },
-          {
-              id: "ai-deploy",
-              title: "41. Deployment (Streamlit Cloud)",
-              explanation: "Apni Streamlit app ko Vercel jaisa live karein using Streamlit Cloud for free.",
-              tasks: ["Push your code to GitHub.", "Connect GitHub to Streamlit Cloud and deploy."],
-              homework: ["How to add secrets (API Keys) in Streamlit Cloud?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "ai-env-vars",
-              title: "42. Environment Variables: Security First",
-              explanation: "Python mein .env files aur os.getenv() use kar ke sensitive data bachayein.",
-              code: "import os\napi_key = os.getenv('MY_API_KEY')",
-              language: "python",
-              tasks: ["Install python-dotenv.", "Create a .env file and read a variable from it."],
-              homework: ["Why should we never commit .env to public repositories?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "ai-finale",
-              title: "43. Success: Clean AI Code",
-              explanation: "Mastering clean code, modular folder structure, aur professional documentation.",
-              tasks: ["Organize your python project into folders (app/, components/, utils/).", "Write a professional README.md for your GitHub."],
-              homework: ["What is the next step in your AI learning journey?"],
-              beginnerFriendly: true
-          }
+        }
       ]
   },
   {
       id: "spec-driven-dev",
-      title: "Module 7: Spec-Driven Development (AI Engineering)",
+      title: "Module 6: Spec-Driven Development (Speckit+ & Gemini CLI)",
       topics: [
           {
-              id: "sdd-what",
-              title: "01. What is Spec-Driven Development?",
-              explanation: "Spec-Driven Development (SDD) ka matlab hai code likhne se pehle uski poori 'Specification' (vazahat) likhna. Ye aik professional developer ka mindset hai jahan planning ko zyada ahmiyat di jati hai.",
-              example: "Jaise ghar banane se pehle uska blueprint banta hai, wese hi app banane se pehle uski spec likhi jati hai.",
-              tasks: ["Write 3 reasons why planning is better than direct coding.", "Explain 'Spec' in your own words."],
-              homework: ["Research: How big companies like NASA use specifications."],
+              id: "sd-intro",
+              title: "01. What is Spec-Driven Development? 📘",
+              explanation: "Spec-Driven Development (SDD) ka matlab hai coding shuru karne se pehle poori planning aur documentation (Spec) taiyar karna. Ye wahi tareeqa hai jo dunya ki bari companies use karti hain taake coding ke doran confusion na ho.",
+              example: "Jaise building ban-nay se pehle uska 'Naksha' (Map) banta hai, wese hi app ban-nay se pehle uski 'Spec' (Specification) banti hai.",
+              tasks: ["Google search karein: 'Software Specification Document example'.", "Apni pasand ki kisi app ke 5 main features ki list banayein."],
+              homework: ["Explain why writing a plan is better than starting code directly."],
               beginnerFriendly: true
           },
           {
-              id: "sdd-why",
-              title: "02. Why Spec-Driven Development?",
-              explanation: "S-DD ke 3 baray faide hain: 1) Clear Direction (pata hota hai kya banana hai), 2) Fast Development (raasta saaf hota hai), 3) Less Bugs (ghaltiyan pehle hi pakri jati hain).",
-              tasks: ["List 3 benefits of SDD.", "Think of a project where direct coding caused problems."],
-              homework: ["Write a paragraph on 'Slow is Fast' in programming."],
+              id: "sd-why",
+              title: "02. Why Spec-Driven Development? 🚀",
+              explanation: "Iske do main faide hain: 1) Clear Direction - Aapko pata hota hai ab agla qadam kya hai, 2) Less Bugs - Planning ki wajah se mistakes kam hoti hain aur logic strong hota hai.",
+              tasks: ["List 3 problems that occur when coding without a plan.", "Identify a bug you faced before that could have been avoided by planning."],
+              homework: ["Write a short note on 'Thinking before Coding'."],
               beginnerFriendly: true
           },
           {
-              id: "sdd-vs-vibe",
-              title: "03. Vibe Coding vs Spec-Driven Development",
-              explanation: "Vibe coding ka matlab hai baghair soche samjhe code likhna ya AI ko 'vibe' pe instructions dena. Spec-driven development structured aur logic-based hoti hai jo professional scale pe kaam karti hai.",
-              tasks: ["Compare Vibe coding vs Structured development.", "Why is Vibe coding risky for big apps?"],
-              homework: ["Ask ChatGPT to build an app with simple instructions vs building with a plan. Note the difference."],
+              id: "sd-vibe-vs-spec",
+              title: "03. Vibe Coding vs Spec-Driven 🌊",
+              explanation: "Vibe coding ka matlab hai random guess lagana aur bina soche samjhe code likhna. Spec-Driven coding 'Structured' hoti hai jahan har line ka aik maqsad hota hai.",
+              example: "Achanak se kitchen mein ja kar jo samne aye pakka lena 'Vibe Cooking' hai, lekin Recipe dekh kar procedure follow karna 'Spec-Driven' hai.",
+              tasks: ["Difference table banayein: Vibe vs Structured Coding.", "Think of a project where you 'vibed' and it failed later."],
+              homework: ["Which approach is more scalable for a team of 10 developers?"],
               beginnerFriendly: true
           },
           {
-              id: "sdd-speckit-intro",
-              title: "04. Introduction to Speckit+",
-              explanation: "Speckit+ aik modern tool hai jo AI aur structured development ko combine karta hai. Ye aapko specs likhne aur un pe code generate karne mein madad deta hai.",
-              tasks: ["What is Speckit+?", "Search for Speckit+ features."],
-              homework: ["How can Speckit+ help a beginner developer?"],
+              id: "sd-speckit-intro",
+              title: "04. Introduction to Speckit+ 🛠️",
+              explanation: "Speckit+ aik advanced system hai jo AI aur Specifications ko mila kar development ko fast karta hai. Ye aapko 'Constitution' (Rules) aur 'Specify' (Logic) ke concepts sikhata hai.",
+              tasks: ["Check the official Speckit+ concept (if available) or research 'AI Spec Tools'.", "Understand the concept of 'Context' in AI coding."],
+              homework: ["How can an AI help in writing better specs?"],
               beginnerFriendly: true
           },
           {
-              id: "sdd-speckit-setup",
-              title: "05. Setup Speckit+: Getting Started",
-              explanation: "Speckit+ ko install karna aur uska basic interface samajhna pehla step hai Professional AI Engineering ki dunya mein.",
-              tasks: ["Install Speckit+ plugin or tool.", "Explore the initial dashboard."],
-              homework: ["List the basic commands found in Speckit+ docs."],
-              beginnerFriendly: true
-          },
-          {
-              id: "sdd-gemini-cli-intro",
-              title: "06. What is Gemini CLI?",
-              explanation: "Gemini CLI aik command-line tool hai jo Google ke sab se powerfull AI 'Gemini' ko terminal se connect karta hai. Ye free hai aur developers ke liye bohot fast hai.",
-              tasks: ["Comparison: Gemini vs Claude (Free vs Paid).", "Why use CLI for AI?"],
-              homework: ["Find out the tokens limit for Gemini 1.5 Flash."],
-              beginnerFriendly: true
-          },
-          {
-              id: "sdd-gemini-cli-install",
-              title: "07. Install Gemini CLI: Setup & Commands",
-              explanation: "Gemini CLI ko setup karne ke liye aapko API key chahiye hoti hai jo Google AI Studio se milti hai.",
-              code: "npm install -g @google/generative-ai\n# Or use the specific CLI tool command\ngemini login",
+              id: "sd-speckit-setup",
+              title: "05. Setup Speckit+ ⚙️",
+              explanation: "Speckit+ ko install karna aur apne project mein configuration files (Constitution) set karna bohot asaan hai. Ye aapke local VS Code ko 'Superpower' de deta hai.",
+              code: "# Typical Setup (Example Commands):\nnpm install -g speckit\nspeckit init",
               language: "bash",
-              tasks: ["Setup Gemini CLI on your PC.", "Run a 'test' command to see if AI responds."],
-              homework: ["Write down 3 basic Gemini CLI commands."],
+              tasks: ["Speckit init command chala kar check karein (agar installed ho).", "Config files ko analyze karein."],
+              homework: ["Search: What is a .constitution file?"],
               beginnerFriendly: true
           },
           {
-              id: "sdd-connect",
-              title: "08. Connect Speckit + Gemini CLI",
-              explanation: "Dono tools ko jorna hi asli magic hai. Speckit planning karta hai aur Gemini CLI us plan ko code mein badalta hai.",
-              tasks: ["Link your Speckit account with Gemini API.", "Verify the connection."],
-              homework: ["Draw a simple diagram showing the workflow of Speckit -> Gemini CLI."],
+              id: "sd-gemini-cli-intro",
+              title: "06. What is Gemini CLI? 🤖",
+              explanation: "Gemini CLI aik free aur powerful command-line tool hai jo Google ke Gemini AI ko direct aapke terminal se connect karta hai. Ab aap code likhte waqt terminal se hi sawal pouch saktay hain.",
+              example: "Ye aisa hi hai jaise aapke terminal mein aik senior developer betha ho jo aapki bar waqt madad kare.",
+              tasks: ["Find out the latest version of Gemini CLI.", "Read about API keys functionality for AI tools."],
+              homework: ["Why is a CLI faster than using a website chatbot?"],
               beginnerFriendly: true
           },
           {
-              id: "sdd-first-spec",
-              title: "09. First Spec Creation: Defining Your App",
-              explanation: "Simple spec likhna seekhein. Website ka header kya hoga, buttons kahan honge, aur user kya karega—sab define karein.",
-              tasks: ["Notes App ka specification likho.", "Define 3 core features of your Notes app."],
-              homework: ["Write a 'User Story' for your Notes app."],
-              beginnerFriendly: true
-          },
-          {
-              id: "sdd-workflow",
-              title: "10. COMPLETE SPEC WORKFLOW (The Master Chapter ⭐)",
-              explanation: "Ye chapter sab kuch jorta hai. Hum structured syntax use karte hain: SP.CONSTITUTION (Rules), SP.SPECIFY (Features), SP.PLAN (Logic), SP.TASK (Breakdown), SP.IMPLEMENT (Code).",
-              code: "# SP.CONSTITUTION\n- Clean Tailwind UI\n- Performance first\n\n# SP.SPECIFY\nFeature: User can add tasks\n\n# SP.PLAN\n1. Create state 2. Map items 3. Style it",
-              language: "markdown",
-              tasks: ["Ek simple app ka full spec workflow likho.", "Identify the 5 main sections of SP workflow."],
-              homework: ["Explain why SP.PLAN is important before SP.IMPLEMENT."],
-              beginnerFriendly: true
-          },
-          {
-              id: "sdd-prompt-eng",
-              title: "11. Prompt Engineering Basics: Talking to AI",
-              explanation: "AI ko vague instructions nahi, balkay 'Context' aur 'Role' ke sath batana professional prompt engineering hai.",
-              code: "Poor: Build a login page.\nPro: You are a React dev. Build a secure login page with focus on accessibility using Tailwind.",
-              language: "markdown",
-              tasks: ["Practice 3 different prompts for the same task.", "Use a 'System Message' approach."],
-              homework: ["What is 'Chain of Thought' prompting?"],
-              beginnerFriendly: true
-          },
-          {
-              id: "sdd-generate-code",
-              title: "12. Generate Code using Gemini CLI",
-              explanation: "Spec tayyar hone ke baad terminal se command run kar ke poori file generate karein.",
-              code: "gemini generate --spec notes.md --output app.tsx",
+              id: "sd-gemini-cli-install",
+              title: "07. Install Gemini CLI 📥",
+              explanation: "Gemini CLI setup karne ke liye hamain Node.js zaroori hai. Iske baad API key set karni parti hai taake computer Google ke AI se baat kar sake.",
+              code: "# Install Gemini CLI:\nnpm install -g @google/generative-ai-cli\n\n# Set API Key (Variable):\nexport GEMINI_API_KEY='YOUR_KEY_HERE'",
               language: "bash",
-              tasks: ["Generate your first component using AI CLI.", "Read the generated code to understand logic."],
-              homework: ["How to specify the framework (React/NextJS) in generation command?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "sdd-debugging",
-              title: "13. Debugging AI Code: Fixing Errors",
-              explanation: "AI hamesha perfect nahi hota. Errors fix karna aur code ko improve karna developer ki zimadari hai.",
-              tasks: ["Find an error in AI generated code.", "Ask AI to fix its own bug using CLI."],
-              homework: ["Why should we always review AI code?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "sdd-first-ai-tool",
-              title: "14. Build Your First AI Tool",
-              explanation: "Ab poora knowledge use kar ke aik choti tool banayein jo AI powered ho.",
-              tasks: ["Build a 'Simple Idea Generator' tool.", "Use Streamlit or React for UI."],
-              homework: ["List the steps you took from Spec to Implementation."],
-              beginnerFriendly: false
-          },
-          {
-              id: "sdd-ai-employees",
-              title: "15. AI Employees Concept: Task Automation",
-              explanation: "AI sirf helper nahi, balkay aapka 'Employee' hai jise aap tasks assign karte hain (Automation).",
-              tasks: ["Research: What is AI Automation?", "Identify a daily task that AI can do for you."],
-              homework: ["How to give multiple tasks to one AI system?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "sdd-ai-agent-build",
-              title: "16. Build AI Agent: Input → Output System",
-              explanation: "Aik agent banayein jo input le kar intelligent output de or actions perform kare.",
-              tasks: ["Create a 'Subject Recommender' agent based on user interest.", "Connect it with a simple UI."],
-              homework: ["What is an Autonomus Agent?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "sdd-multi-agent-system",
-              title: "17. Multi-Agent System: The Dream Team",
-              explanation: "Multiple agents ka aapas mein baat karna aur bara task complete karna 'Multi-agent system' hai.",
-              example: "Researcher Agent fetches data -> Writer Agent writes content.",
-              tasks: ["Design a 2-agent system workflow.", "Explain the role of each agent."],
-              homework: ["Search: What is Microsoft AutoGen?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "sdd-web-integration",
-              title: "18. AI + Website Integration",
-              explanation: "AI power ko browser ke saath jorna taake website smart ban sakay.",
-              tasks: ["Integrate a 'Smart Search' in your project.", "Show AI thinking process on UI."],
-              homework: ["How to handle API timeouts in web frontend?"],
-              beginnerFriendly: false
-          },
-          {
-              id: "sdd-final-project",
-              title: "19. Final Project: Spec → App (Masterpiece)",
-              explanation: "Ab aqri imtehan! Aik complex AI SaaS ya Agent system banayein jo spec driven ho.",
-              tasks: ["Build a 'Career Mentor AI' or 'Recipe Agent'.", "Show full Spec to CLI process."],
-              homework: ["Record a video of your AI app working."],
-              beginnerFriendly: false
-          },
-          {
-              id: "sdd-deployment",
-              title: "20. Deployment & Real Use",
-              explanation: "Apne project ko cloud pe deploy karein aur real users ko dikhayein.",
-              tasks: ["Deploy your Spec-Driven app on Vercel or Netlify.", "Get feedback from 3 users."],
-              homework: ["List the deployment steps you followed."],
+              tasks: ["Install the CLI tool globally.", "Verify installation using 'gemini --version'."],
+              homework: ["Get your free Gemini API Key from Google AI Studio."],
               beginnerFriendly: true
+          },
+          {
+              id: "sd-connect-tools",
+              title: "08. Connect Speckit + Gemini 🔗",
+              explanation: "Asli maza tab ata hai jab hum Speckit+ (The Planner) ko Gemini (The Brain) ke sath connect karte hain. Is se complete automated workflow tayyar hota hai.",
+              tasks: ["Configure Speckit to use Gemini as the backend engine.", "Test a simple 'hello' query through the integrated system."],
+              homework: ["Explain the benefit of integrated AI over copy-pasting code."],
+              beginnerFriendly: false
+          },
+          {
+              id: "sd-first-spec",
+              title: "09. First Spec Creation 📝",
+              explanation: "Ab hum apni pehli real-world Spec likhenge. Isme App ka vision, features, aur user flow define kiya jata hai.",
+              tasks: ["Write a 1-page spec for a 'Todo List App'.", "Define input fields and expected output behavior."],
+              homework: ["Break down your Todo app into 5 smaller sub-tasks."],
+              beginnerFriendly: true
+          },
+          {
+              id: "sd-workflow-mastery",
+              title: "10. COMPLETE SPEC WORKFLOW ⭐",
+              explanation: "Ye hai professional development ka nichor! Is workflow ko follow kar ke aap complex apps asani se bana saktay hain:\n\n✔ **SP.CONSTITUTION**: Rules set karna (e.g., 'Use Tailwind only').\n✔ **SP.SPECIFY**: Core logic aur requirements define karna.\n✔ **SP.PLAN**: File structure aur architecture plan karna.\n✔ **SP.TASK**: Kaam ko chote manageable tasks mein todna.\n✔ **SP.IMPLEMENT**: AI ki madad se coding karna.\n\nNote: Har step perfect hone ke baad hi aglay pe jana lazmi hai.",
+              example: "Code Pic: Aik aisi tasveer jahan Constitution se Implement tak ka sara safar nazar aaye.",
+              tasks: ["Complete Task: Ek full-stack spec likho apne dream project ke liye.", "Follow all 5 'SP' steps sequence mein."],
+              homework: ["Record a short video explaining your spec to a friend."],
+              beginnerFriendly: false
           }
       ]
   }
 ];
+
+export const PYTHON_AI_COURSE: Module[] = [
+  {
+    id: "py-foundation-part1",
+    title: "Phase 1: Python Foundation (Part 1)",
+    topics: [
+      {
+        id: "ch0-linkedin",
+        title: "00. LinkedIn: Your Professional Identity 💼",
+        explanation: "LinkedIn dunya ka sab se bara professional network hai jahan dunya bhar ke developers, recruiters aur founders mojood hain. Yahan apni profile banana aur rozana jo aap seekh rahe hain (journey) wo share karna bohot zaroori hai. Is se aapko future mein jobs aur freelancing clients milne mein asani hogi. Yaad rakhein: 'Jo dikhta hai, wo bikta hai!'",
+        example: "Real Life: LinkedIn aapka digital Resume hai jo 24/7 dunya ko aapki skills dikhata rehta hai bina aapke bataye.",
+        tasks: ["LinkedIn profile banayein (agar nahi hai).", "Apni headline mein 'Python & AI Trainee @ Khipro Academy' likhein.", "Pehli post share karein: 'Excited to start my Python + AI journey! 🚀'"],
+        homework: ["Weekly progress share karne ka schedule banayein."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch1-intro",
+        title: "01. Introduction to Python",
+        explanation: "Python ek bohot hi asaan aur powerful programming language hai jo 1991 mein Guido van Rossum ne ijaad ki. Ye 'High-level' language hai, yani iska code insani zaban (English) se milta julta hai. Python dunya mein Data Science, AI, Web Development, aur Automation ke liye sab se zyada use hoti hai.",
+        example: "Jaise English seekhne ke liye alphabet zaroori hain, wese hi digital dunya se baat karne ke liye Python ek behtareen zariya hai.",
+        tasks: ["Python ki history search karein.", "3 bari apps ke naam likhein jo Python mein bani hain."],
+        homework: ["Write 5 benefits of Python for beginners."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch2-setup",
+        title: "02. Installing Python & VS Code",
+        explanation: "Python ko use karne ke liye aapko official website 'python.org' se installer download karna hota hai. Uske baad 'VS Code' install karein, jo ek professional code editor hai jahan aap apna code likhein ge.",
+        tasks: ["Python install karein.", "VS Code mein 'Python' extension install karein."],
+        homework: ["Take a screenshot of your VS Code with a Python file open."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch3-hello",
+        title: "03. Hello World Program",
+        explanation: "Har programmer ka pehla qadam 'Hello World' print karna hota hai. Python mein hum 'print()' function use karte hain jo screen pe message dikhata hai.",
+        code: "print('Hello World! Python is awesome.')",
+        language: "python",
+        tasks: ["Apna naam print karein.", "Do alag alag lines pe messages print karein."],
+        homework: ["What is the purpose of quotes in print()?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch4-vars",
+        title: "04. Variables",
+        explanation: "Variables dabba (containers) ki tarah hote hain jin mein hum data save karte hain. Python 'Dynamic Typing' support karta hai, yani aapko variable ki type batane ki zaroorat nahi parti.",
+        code: "name = 'Sami'\nage = 18\nprint(name, age)",
+        language: "python",
+        tasks: ["Age aur City ke liye variables banayein.", "Variable ki value change kar ke print karein."],
+        homework: ["Write rules for naming variables in Python."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch5-types",
+        title: "05. Data Types",
+        explanation: "Python mein main 4 data types hain: \n1. String (Text)\n2. Integer (Pura number)\n3. Float (Decimal wala number)\n4. Boolean (True/False).",
+        code: "x = 'Hello' # str\ny = 10      # int\nz = 10.5    # float\na = True    # bool",
+        language: "python",
+        tasks: ["Har type ka ek variable banayein.", "type() function use kar ke check karein."],
+        homework: ["Can a variable hold multiple data types at once? Research it."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch6-casting",
+        title: "06. Type Casting",
+        explanation: "Type casting ka matlab hai ek data type ko doosri mein badalna. Jaise string '10' ko number 10 mein badalna.",
+        code: "age = '18'\nage_num = int(age)\nprint(age_num + 2)",
+        language: "python",
+        tasks: ["Float ko Integer mein badlein.", "Number ko String mein badal kar message banayein."],
+        homework: ["What happens if you cast 'abc' to int?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch7-io",
+        title: "07. Input & Output",
+        explanation: "User se baat karne ke liye 'input()' use hota hai. Ye hamesha data ko 'string' mein leta hai, is liye maths ke liye casting zaroori hai.",
+        code: "name = input('Enter name: ')\nprint('Welcome ' + name)",
+        language: "python",
+        tasks: ["User se age puchein aur 10 saal baad ki age print karein.", "Do numbers input lein aur unka sum nikalyein."],
+        homework: ["How to take input in the same line as prompt?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch8-ops",
+        title: "08. Operators",
+        explanation: "Operators calculations aur comparisons ke liye hote hain. +, -, *, / (Arithmetic), ==, !=, >, < (Comparison), and, or, not (Logical).",
+        code: "a = 10\nb = 3\nprint(a % b) # Remainder\nprint(a // b) # Floor Division",
+        language: "python",
+        tasks: ["Rectangle ka area calculate karein length aur width se.", "Comparison operators ki help se age check karein."],
+        homework: ["Difference between / and //?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch9-conditions",
+        title: "09. Conditional Statements",
+        explanation: "if, else, aur elif decisions lene ke liye use hote hain. Indentation (space) ka khayal rakhna Python mein bohot zaroori hai.",
+        code: "score = 85\nif score >= 90: print('A+')\nelif score >= 80: print('A')\nelse: print('Pass')",
+        language: "python",
+        tasks: ["Even/Odd number check karne wala code likhein.", "Grade system banayein 5 levels ka."],
+        homework: ["What is Nested If?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch10-loops",
+        title: "10. Loops",
+        explanation: "Baar baar hone wale kaamon ke liye Loops use hote hain. for loop counting ke liye aur while loop condition ke liye.",
+        code: "for i in range(1, 6):\n    print(i)\n\nx = 0\nwhile x < 3:\n    print('Looping...')\n    x += 1",
+        language: "python",
+        tasks: ["2 ka table print karein 10 tak.", "Numbers 10 se 1 tak reverse print karein."],
+        homework: ["Difference between break and continue?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "milestone-1-2",
+        title: "🚀 Milestone Projects (Ch 1-10)",
+        explanation: "Pehle 10 chapters ka nichor! Ab hum real-world logic apply karein ge.",
+        tasks: [
+          "👨‍🏫 Project 1 (Teacher Build): Basic Calculator - Input/Output aur Operators use kar ke logic banayein.",
+          "👨‍🎓 Project 2 (Student Task): Number Guessing Game - Loops aur Conditions use kar ke user ko guess karne ka mauka dein."
+        ],
+        homework: ["Calculator mein 'Divide by Zero' handle karne ki koshish karein.", "Guessing game mein 'Tries' count add karein."],
+        beginnerFriendly: true
+      }
+    ]
+  },
+  {
+    id: "py-foundation-part2",
+    title: "Phase 1: Python Foundation (Part 2)",
+    topics: [
+      {
+        id: "ch11-functions",
+        title: "11. Functions (Types & Power)",
+        explanation: "Functions code ko reusable banate hain. Python mein 3 main types hain:\n1. **Built-in Functions:** Jo Python mein pehle se hain (e.g., print(), len(), type()).\n2. **User-Defined Functions:** Jo hum khud banate hain (def keyword se).\n3. **Lambda Functions:** Aik line wale short functions.\n\nUse Case: Jab aapko koi logic (jaise Tax calculation) poori app mein 50 jagah use karni ho, to function banayein taake har jagah code na likhna paray.",
+        example: "Real Life: 'Juice Machine' (Built-in), 'Dadi ka Nuskha' (User-defined - specific logic), aur 'Quick Snack' (Lambda - fast & small).",
+        code: "# 1. User-Defined Function\ndef calculate_tax(salary):\n    return salary * 0.1\n\n# 2. Lambda Function (Short & Anonymous)\nadd_simple = lambda x, y: x + y\n\nprint(f'Tax: {calculate_tax(50000)}')\nprint(f'Sum: {add_simple(5, 10)}')\nprint(len('Hello')) # Built-in",
+        language: "python",
+        tasks: ["Aik built-in function 'max()' use kar ke list se largest number nikalyein.", "Lambda function banayein jo number ka cube (x*x*x) nikalay.", "User-defined function banayein jo user se marks le mazeed logic ke liye."],
+        homework: ["What are Recursive functions in Python?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch12-lists",
+        title: "12. Lists (The Shopping Cart)",
+        explanation: "List aik aisi cheez hai jahan aap bohot saara data aik hi variable mein store kar saktay hain. Ye 'ordered' hoti hai, yani har item ka aik index (number) hota hai jo 0 se start hota hai.",
+        example: "Real Life: Grocery List ya Mobile Contacts. Aap items add kar saktay hain, nikal saktay hain, ya change kar saktay hain.",
+        code: "students = ['Ali', 'Sami', 'Hassan']\nstudents.append('Zaid') # Naya item add karein\nprint(students[1]) # 'Sami' print hoga",
+        language: "python",
+        tasks: ["5 fruits ki list banayein aur replace karein 2nd item ko 'Pineapple' se.", "List ko reverse order mein print karein."],
+        homework: ["How to find the length of a list using a function?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch13-tuples",
+        title: "13. Tuples (Locked Data)",
+        explanation: "Tuples bilkul lists jaisi hoti hain magar ye 'Immutable' hoti hain, yani banane ke baad aap inhein change nahi kar saktay. Ye un cheezon ke liye use hoti hain jo fix rehti hain.",
+        example: "Real Life: Haftay ke dino ke naam (Mon, Tue...) ya Coordinates (Latitude, Longitude). Inhein koi accidentally change na kar sake is liye tuple best hai.",
+        code: "coordinates = (24.8607, 67.0011)\n# coordinates[0] = 25.0 # Error aye ga kyun ke change nahi ho sakta",
+        language: "python",
+        tasks: ["Aik tuple banayein jis mein 7 colors ke naam hon.", "Check karein ke tuple mein 'Red' exist karta hai ya nahi."],
+        homework: ["Why is Tuple faster than List in Python?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch14-dicts",
+        title: "14. Dictionaries (Digital Library)",
+        explanation: "Dictionary mein hum data 'Key-Value' pairs mein store karte hain. Aap key dete hain aur aapko uska data (value) mil jata hai. Ye bohot fast hoti hai search karne ke liye.",
+        example: "Real Life: Mobile Phone Contact List. Name (Key) hai aur Number (Value) hai. Ya aik Car jis ki properties hon (Brand: Toyota, Model: 2024).",
+        code: "car = {\n    'brand': 'Toyota',\n    'model': 'Corolla',\n    'year': 2024\n}\nprint(car['brand'])",
+        language: "python",
+        tasks: ["Student profile dict banayein (name, roll_no, marks).", "Dict mein aik naya key 'city' add karein."],
+        homework: ["How to remove a key from a dictionary?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch15-sets",
+        title: "15. Sets (Unique Only)",
+        explanation: "Sets aisi collection hain jin mein 'Duplicates' allowed nahi hotay. Agar aap aik hi value do dafa dalein ge, to wo aik hi count hogi. Inka koi order nahi hota.",
+        example: "Real Life: Unique User IDs in a system. Agar aik hi user do dafa sign-up karne ki koshish kare, to set use unique hi rakhe ga.",
+        code: "ids = {101, 102, 103, 101}\nprint(ids) # Results: {101, 102, 103}",
+        language: "python",
+        tasks: ["List of numbers se duplicates nikalne ke liye set use karein.", "Check karein ke set indexing support karta hai ya nahi."],
+        homework: ["What is the difference between set.add() and set.update()?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch16-string-methods",
+        title: "16. String Methods (Text Magic)",
+        explanation: "Strings pe aap bohot saare built-in functions apply kar saktay hain. Aap text ko bara ya chota kar saktay hain, kisi word ko dhoond kar replace kar saktay hain, ya text ko gaps nikal saktay hain.",
+        example: "Real Life: Jab aap password set karte hain to system spaces nikal deta hai (strip) ya check karta hai ke sirf letters hain ya nahi.",
+        code: "msg = '  python is awesome  '\nprint(msg.strip().upper()) # 'PYTHON IS AWESOME'\nprint(msg.replace('awesome', 'great'))",
+        language: "python",
+        tasks: ["Apne naam ko Capital letters mein badlein.", "Aik sentence se 'bad' word ko 'good' se replace karein."],
+        homework: ["What does .split() do in a string?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch17-files",
+        title: "17. File Handling (Memory)",
+        explanation: "Abhi tak jo hum coding kar rahe hain wo programme band hone pe khatam ho jati hai. File Handling humein data ko computer ki memory (Permanent Storage) mein save karne ki ijazat deta hai.",
+        example: "Real Life: Aik game save karna ya notepad mein note likhna. 'w' for Write, 'r' for Read, 'a' for Append (agey jorna).",
+        code: "with open('data.txt', 'w') as f:\n    f.write('I am learning AI from Khipro Academy!')",
+        language: "python",
+        tasks: ["Aik program likhein jo user se 5 lines le aur file mein save kare.", "File read kar ke screen pe display karein."],
+        homework: ["What is the advantage of using 'with' keyword?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch18-exceptions",
+        title: "18. Exception Handling (Anti-Crash)",
+        explanation: "Agar aapka code wrong input le ya zero se divide ho jaye, to programme crash (error) deta hai. Try/Except se hum system ko crash hone se bacha saktay hain aur user ko tameez se message dikha saktay hain.",
+        example: "Real Life: Internet disconnecting while downloading—app crash nahi hoti balkay kehti hai 'Retry'.",
+        code: "try:\n    num = int(input('Enter number: '))\n    print(10/num)\nexcept ZeroDivisionError:\n    print('Aap Zero se divide nahi kar saktay!')\nexcept ValueError:\n    print('Sirf numbers likhein!')",
+        language: "python",
+        tasks: ["Aik code likhein jo 'File Not Found' error ko catch kare.", "User input validation banayein loops aur try-except ke saath."],
+        homework: ["Can we have multiple 'except' blocks for one 'try'?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch19-modules",
+        title: "19. Modules & Packages",
+        explanation: "Module bani-banayi files hoti hain jin mein functions pehle se likhay hotay hain (e.g., Math operations, Random numbers). 'pip' tool se dunya bhar ke programmers ki libraries install ki jati hain.",
+        example: "Real Life: Jaise LEGO blocks—aap market se (pip) blocks laate hain aur apni building mein use karte hain.",
+        code: "import random\nprint(random.randint(1, 100)) # 1 se 100 tak koi bhi random number",
+        language: "python",
+        tasks: ["'math' module se square root nikalyein.", "Random module se 'Heads' ya 'Tails' wala game banayein."],
+        homework: ["How to create your own custom module in Python?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch20-venv",
+        title: "20. Virtual Environment (Safe Zone)",
+        explanation: "Agar aap aik project mein purani library use kar rahe hain aur doosre mein nayi, to versions clash honge. Venv har project ke liye alag environment (kamra) bana deta hai.",
+        example: "Real Life: Jaise lab mein different Chemicals ko alag rkhna taake clash na hon.",
+        code: "# Create: python -m venv my_ai_env\n# Activate: my_ai_env\\Scripts\\activate",
+        language: "bash",
+        tasks: ["Naya venv banayein aur us mein 'requests' library install karein.", "pip list command se libraries check karein."],
+        homework: ["Why should we avoid global installations of libraries?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "milestone-3-4",
+        title: "🚀 Milestone Projects (Ch 11-20)",
+        explanation: "Data Structures aur File handling ko real projects mein use karne ka waqt!",
+        tasks: [
+          "👨‍🏫 Project 3 (Teacher Build): Todo List App - Lists aur File Handling use kar ke tasks save karein.",
+          "👨‍🎓 Project 4 (Student Task): Student Record System - Dictionaries aur Exception handling use kar ke student data manage karein."
+        ],
+        homework: ["Todo list mein 'Timestamp' add karein.", "Student system mein 'Search' feature banayein."],
+        beginnerFriendly: false
+      }
+    ]
+  },
+  {
+    id: "py-oop-projects",
+    title: "Phase 2: Logic & OOP",
+    topics: [
+      {
+        id: "ch21-oop-intro",
+        title: "21. Object Oriented Programming (OOP)",
+        explanation: "OOP aik aisa tareeqa hai jahan hum code ko real-world items ki tarah deal karte hain. 'Class' aik naksha (blueprint) hota hai aur 'Object' us nakshe se bani hui asli cheez.",
+        example: "Real Life: 'Car' aik class hai (jis mein tires, engine hota hai), magar 'Apki Mehran' aik object hai.",
+        code: "class Robot:\n    def speak(self):\n        print('Hello, I am a Robot!')\n\nmy_robot = Robot()\nmy_robot.speak()",
+        language: "python",
+        tasks: ["Aik 'Student' class banayein jo 'study' kar sake.", "Class se do different objects banayein."],
+        homework: ["Difference between Class and Object?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch22-init",
+        title: "22. Constructor (__init__)",
+        explanation: "Constructor tab trigger hota hai jab object banta hai. Ye properties (jaise name, color, age) ko set karne ke liye use hota hai taake har object ka apna data ho.",
+        example: "Real Life: Jab bacha paida hota hai to uska naam rakha jata hai—yani initialize kiya jata hai.",
+        code: "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\np1 = Person('Ali', 20)\nprint(p1.name)",
+        language: "python",
+        tasks: ["Class 'Mobile' banayein with brand aur price in constructor.", "Object banayein aur details display karein."],
+        homework: ["What is the purpose of 'self' in Python classes?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch23-inheritance",
+        title: "23. Inheritance (Virasaat)",
+        explanation: "Aik class doosri class ki khasiyat (properties) adopt kar sakti hai. Is se code repeat nahi karna parta.",
+        example: "Real Life: Bachay apne maa-baap se features (height, eye color) inherit karte hain.",
+        code: "class Animal:\n    def eat(self): print('Eating...')\n\nclass Dog(Animal):\n    def bark(self): print('Woof!')\n\nmy_dog = Dog()\nmy_dog.eat() # Parent method",
+        language: "python",
+        tasks: ["'Vehicle' parent class aur 'Bike' child class banayein.", "Child class mein aik unique property add karein."],
+        homework: ["What is Multi-level Inheritance?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch24-encapsulation",
+        title: "24. Encapsulation (Security)",
+        explanation: "Data ko makhsoos (private) banana taake bahar se koi ghalti se use tabdeel na kar sake. Double underscore (__) use hota hai.",
+        example: "Real Life: Bank Account balance. Aap balance check kar saktay hain magar direct change nahi kar saktay baghair permission ke.",
+        code: "class Bank:\n    def __init__(self):\n        self.__balance = 1000 # Private\n\n    def show_balance(self): return self.__balance\n\nmy_bank = Bank()\nprint(my_bank.show_balance())",
+        language: "python",
+        tasks: ["Private variable '__password' wali class banayein.", "Method banayein jo password check kare."],
+        homework: ["Difference between Public and Private members?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch25-polymorphism",
+        title: "25. Polymorphism (Multiple Forms)",
+        explanation: "Aik hi naam ka kaam magar result alag alag. Yani different classes mein same function name magar logic alag.",
+        example: "Real Life: 'Speak' function—insan bole ga, kutta bhonkay ga, aur billi meow kare gi. Sab bol rahe hain magar tarika alag hai.",
+        code: "class Cat: \n    def speak(self): return 'Meow'\nclass Dog: \n    def speak(self): return 'Woof'\n\nanimals = [Cat(), Dog()]\nfor a in animals: print(a.speak())",
+        language: "python",
+        tasks: ["Shape class banayein with 'area()' function and override in Circle/Square.", "Explain polymorphism with a real-world example."],
+        homework: ["What is Method Overriding?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch26-logic-projects",
+        title: "26. Project: ATM & Quiz Logic",
+        explanation: "Ab logic ka asli imtehan hai! Hum loops, conditions aur variables ko use kar ke real systems banayein ge.",
+        tasks: ["ATM Machine code likhein (Check balance, Withdraw, Deposit).", "Aik interactive Quiz app banayein jo end mein correct answers count kare."],
+        homework: ["Draw a flowchart of ATM logic."],
+        beginnerFriendly: true
+      }
+    ]
+  },
+  {
+    id: "py-streamlit-section",
+    title: "Phase 3: Streamlit Web Apps",
+    topics: [
+      {
+        id: "ch27-st-intro",
+        title: "27. What is Streamlit? (Easy Web)",
+        explanation: "Streamlit dunya ka sab se asaan framework hai Python developers ke liye web apps banane ka. Aapko HTML, CSS, ya JavaScript seekhne ki koi zaroorat nahi.",
+        example: "Real Life: Agar aap ne koi Machine Learning model banaya hai aur aap chahte hain ke apka dost use website pe use kare, to Streamlit 5 line mein ye kar de ga.",
+        tasks: ["Streamlit documentation visit karein.", "3 features likhein jo Streamlit ko fast banate hain."],
+        homework: ["Search: Who created Streamlit?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch28-st-install",
+        title: "28. Install Streamlit",
+        explanation: "Installation bohot asaan hai. Bas 'pip install streamlit' karein aur check karne ke liye 'streamlit hello' terminal mein likhein.",
+        code: "pip install streamlit\n# Run demo:\nstreamlit hello",
+        language: "bash",
+        tasks: ["Streamlit install karein venv mein.", "Demo dashboard browse karein jo screen pe aye ga."],
+        homework: ["Check your streamlit version using terminal."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch29-st-first",
+        title: "29. First Streamlit App",
+        explanation: "Streamlit mein UI elements add karna itna hi asaan hai jitna print statement likhna. 'st.title' website ka title banata hai aur 'st.write' text likhta hai.",
+        code: "import streamlit as st\nst.title('My First AI App')\nst.subheader('Built with Python')\nst.write('Welcome to the world of Streamlit!')",
+        language: "python",
+        tasks: ["App banayein jis mein apka Bio data display ho.", "Image add karne ke liye st.image scan karein."],
+        homework: ["How to run a specific .py file in Streamlit?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch30-st-inputs",
+        title: "30. User Inputs (Interaction)",
+        explanation: "Website ko interactive banane ke liye inputs zaroori hain. Streamlit mein forms, buttons, aur text boxes aik function se ban jate hain.",
+        example: "Real Life: Login form ya search bar.",
+        code: "name = st.text_input('Enter your name')\nif st.button('Submit'):\n    st.success(f'Hello {name}!')",
+        language: "python",
+        tasks: ["Aik form banayein jo Name, Age aur Country puche.", "Submit button pe user ki details summary dikhayein."],
+        homework: ["What is the difference between st.text_input and st.text_area?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "milestone-5-6",
+        title: "🚀 Milestone Projects (Ch 21-30)",
+        explanation: "OOP and Streamlit Web UI integration!",
+        tasks: [
+          "👨‍🏫 Project 5 (Teacher Build): Weather Web App - Streamlit UI aur Weather API connection.",
+          "👨‍🎓 Project 6 (Student Task): Streamlit Calculator - Dashboard UI ke saath advance functions."
+        ],
+        homework: ["Weather app mein 'Search History' add karein.", "Calculator mein calculation history sidebar mein dikhayein."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch31-st-layout",
+        title: "31. Layout & Design (Sidebar & Columns)",
+        explanation: "Professional apps mein data side by side hota hai ya menus side per hotay hain. Streamlit mein 'st.sidebar' aur 'st.columns' se ye design banta hai.",
+        code: "with st.sidebar:\n    st.header('Settings')\n    st.radio('Choose Theme', ['Light', 'Dark'])\n\ncol1, col2 = st.columns(2)\ncol1.write('Left Content')\ncol2.write('Right Content')",
+        language: "python",
+        tasks: ["Sidebar mein profile picture aur menu banayein.", "Dashboard layout banayein jis mein 3 columns hon metrics ke liye."],
+        homework: ["Search: How to use st.tabs in Streamlit?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch32-st-calc",
+        title: "32. Project: Smart Calculator Web",
+        explanation: "Ab hum CLI (terminal) calculator ko aik asli Web App mein badlein ge. User numbers select kare ga aur button click karte hi result aye ga.",
+        tasks: ["st.number_input use kar ke do numbers lein.", "Dropdown (st.selectbox) se Operation (+, -, *, /) select karwayein.", "Result ko baray font mein display karein."],
+        homework: ["Add a 'Reset' button to clear inputs."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch33-st-upload",
+        title: "33. File Upload & Processing",
+        explanation: "Asli AI apps files pe kaam karti hain. 'st.file_uploader' se aap images ya documents upload karwa kar un pe Python logic chala saktay hain.",
+        code: "file = st.file_uploader('Upload your CSV or Image')\nif file:\n    st.write('File Uploaded Successfully!')",
+        language: "python",
+        tasks: ["Image uploader banayein aur upload honey wali image dikhayein.", "Text file read kar ke uska content screen pe print karein."],
+        homework: ["Search: How to read a dataframe using st.file_uploader?"],
+        beginnerFriendly: false
+      }
+    ]
+  },
+  {
+    id: "py-ai-section",
+    title: "Phase 4: AI & APIs",
+    topics: [
+      {
+        id: "ch34-ai-intro",
+        title: "34. Introduction to AI (The Big Picture)",
+        explanation: "AI ka matlab hai aise Computer Systems jo insano ki tarah soch saktay hon, patterns dhoond saktay hon aur feslay le saktay hon. AI ki main branches NLP (Tezt) aur Computer Vision (Images) hain.",
+        example: "Real Life: Netflix ki recommendations, Snapchat ke filters, aur ChatGPT computer ki 'Akal' (AI) ke examples hain.",
+        tasks: ["3 real world AI use cases likhein.", "AI vs standard programming ka farq batayein."],
+        homework: ["Write a short paragraph on 'Will AI replace programmers?'"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch35-api-basics",
+        title: "35. APIs Basics (The Messenger)",
+        explanation: "API (Application Programming Interface) aik aisa messenger hai jo aapki request kisi doosre server tak le jata hai aur wahan se jawab wapas lata hai. AI seekhne ke liye API ka concept bohot zaroori hai.",
+        example: "Real Life: Restaurant mein Waiter—Aap (User) khana mangte hain, Waiter (API) kitchen (Server) se khana lata hai.",
+        tasks: ["Search karein: What is JSON?", "Explain the role of API keys and why they must be kept private."],
+        homework: ["Find 3 popular AI APIs available today."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch36-py-api-requests",
+        title: "36. Using AI APIs in Python (Requests)",
+        explanation: "Python ki 'requests' library use kar ke hum AI Models (like Gemini) se baat karte hain. Hum text bhejtay hain aur AI humein structured JSON response deta hai.",
+        code: "import requests\nurl = 'https://api.example.com/v1/chat'\nheaders = {'Authorization': 'Bearer YOUR_KEY'}\nresponse = requests.post(url, json={'prompt': 'Hi AI'}, headers=headers)\nprint(response.json())",
+        language: "python",
+        tasks: ["Requests library install karein.", "Free dummy API se data fetch karne ka code likhein."],
+        homework: ["What is the difference between GET and POST requests?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch37-prompting",
+        title: "37. Prompt Engineering (Talking to AI)",
+        explanation: "AI se behtareen response nikalwane ke liye use 'Context' aur 'Instructions' dena zaroori hai. Is art ko Prompt Engineering kehte hain.",
+        example: "Real Life: 'Code likho' (Bad Prompt) vs 'Python mein aik variable banao aur use print karo explanation ke saath' (Good Prompt).",
+        tasks: ["Aik 'System Prompt' likhein jo AI ko aik strict Maths Teacher bana de.", "Try 3-step reasoning prompt (Chain of Thought)."],
+        homework: ["What is temperature in AI model settings?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch38-gemini-cli",
+        title: "38. Gemini CLI & SDK",
+        explanation: "Google ka Gemini API use karne ke liye hum 'google-generativeai' library use karte hain. Ye bohot fast hai aur image processing bhi support karti hai.",
+        code: "import google.generativeai as genai\ngenai.configure(api_key='YOUR_API_KEY')\nmodel = genai.GenerativeModel('gemini-pro')\nresponse = model.generate_content('Hello!')\nprint(response.text)",
+        language: "python",
+        tasks: ["Gemini API Key generate karein Google AI Studio se.", "Pehla Python script likhein jo Gemini se reply le."],
+        homework: ["How to send images to Gemini using Python?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch39-claude-api",
+        title: "39. Claude Code & reasoning models",
+        explanation: "Anthropic ke Claude models coding aur mushkil logic ke liye behtareen hain. Inka reasoning level bohot high hota hai.",
+        example: "Real Life: Jab aapko code debug karwana ho ya pura software design karna ho, to Claude best choice hai.",
+        tasks: ["Anthropic Console visit karein.", "Claude aur Gemini ke responses ka comparison likhein aik mushkil logic pe."],
+        homework: ["What are tokens in LLMs?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch40-chatbot-project",
+        title: "40. Project: Build Professional AI Chatbot",
+        explanation: "Ab Streamlit aur Gemini ko join karein! User UI pe sawal likhe ga aur AI ka jawab 'Streaming' (aik aik word kar ke) nazar aye ga.",
+        tasks: ["Streamlit app banayein jis mein chat messages record hon.", "User feedback system add karein (Thumbs up/down)."],
+        homework: ["How to manage Chat History in Streamlit session_state?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "milestone-7-8",
+        title: "🚀 Milestone Projects (Ch 31-40)",
+        explanation: "AI Integration and Chatbot building!",
+        tasks: [
+          "👨‍🏫 Project 7 (Teacher Build): AI Chatbot - Gemini API aur Streamlit interface.",
+          "👨‍🎓 Project 8 (Student Task): AI Career Advisor - User interests ke mutabiq AI career suggestions de ga."
+        ],
+        homework: ["Chatbot mein 'Tone Selection' add karein.", "Career advisor mein resume upload feature ka logic sochein."],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch41-agents-intro",
+        title: "41. AI Agents (Future of AI)",
+        explanation: "AI Agent sirf aik chatbot nahi hota, balkay wo 'Action' bhi le sakta hai (jaise files read karna, web search karna, ya email bhejna).",
+        example: "Real Life: Aik travel agent jo sirf ticket ka batata nahi, balkay book bhi kar de.",
+        tasks: ["AI Agents ke 3 real-world projects dhoondein.", "Explain 'Reasoning vs Action' cycle (ReAct)."],
+        homework: ["What is an Autonomy in AI Agents?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch42-simple-agent",
+        title: "42. Project: Build Your First AI Agent",
+        explanation: "Python mein aik aisa smart system banayein jo PDF read kare aur us mein se important points nikal kar email draft kare.",
+        tasks: ["Agent ka logic flow-chart banayein.", "AI ko 'Tools' ka access dene ka concept samjhein."],
+        homework: ["Search: What is function calling in AI APIs?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch43-multi-agent",
+        title: "43. Multi-Agent Systems (Teamwork)",
+        explanation: "Jab dher saare agents mil kar aik complex task karte hain (e.g., Researcher Agent data dhoonde ga aur Writer Agent use article likhay ga).",
+        example: "Real Life: Aik company ki team jahan har manager ka apna kaam hai.",
+        tasks: ["CrewAI ya LangChain ka basic structure check karein.", "Manager Agent ka concept explain karein."],
+        homework: ["Can AI agents argue with each other to improve quality?"],
+        beginnerFriendly: false
+      }
+    ]
+  },
+  {
+    id: "py-advanced-career",
+    title: "Phase 5: Backend & Advanced",
+    topics: [
+      {
+        id: "ch44-fastapi",
+        title: "44. FastAPI (The Professional Brain)",
+        explanation: "FastAPI aik modern backend framework hai jo Python mein APIs banane ke liye use hota hai. Ye bohot fast hai aur companies mein production apps ke liye use hota hai.",
+        example: "Real Life: Jab aap Uber ya Foodpanda pe order karte hain, to backend (jaise FastAPI) check karta hai ke driver kahan hai aur aapko update bhejta hai.",
+        code: "from fastapi import FastAPI\napp = FastAPI()\n\n@app.get('/status')\ndef check_status():\n    return {'status': 'AI Server is running'}",
+        language: "python",
+        tasks: ["FastAPI aur Uvicorn install karein.", "Aik GET endpoint banayein jo 'Hello World' return kare."],
+        homework: ["What is the difference between Frontend and Backend?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch45-st-fastapi",
+        title: "45. Project: Full AI SaaS Architecture",
+        explanation: "Asli SaaS apps mein Streamlit (UI) aur FastAPI (Brain) alag hotay hain. Streamlit frontend hota hai jo user se data leta hai aur FastAPI backend hota hai jo AI logic chala kar result wapas bhejta hai.",
+        tasks: ["Streamlit app se FastAPI server pe request bhejein.", "CORS settings configuration samjhein."],
+        homework: ["Why we use separation of concerns (Frontend/Backend)?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch46-db-sqlite",
+        title: "46. Database Basics (SQLite)",
+        explanation: "AI Apps ko user data aur chats save karne ke liye database chahiye hota hai. SQLite Python ke saath built-in ata hai aur seekhne ke liye perfect hai.",
+        example: "Real Life: Aik digital register jahan har entry line by line save ho.",
+        code: "import sqlite3\nconn = sqlite3.connect('users.db')\n# Logic to create table and insert data",
+        language: "python",
+        tasks: ["SQL table banayein 'users' ke naam se.", "Data insert aur fetch karne ka logic likhein."],
+        homework: ["Difference between SQL and NoSQL?"],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch47-deploy",
+        title: "47. Deployment (Going Online)",
+        explanation: "Apne computer se nikal kar app ko dunya ko dikhane ke liye deployment zaroori hai. Hum GitHub aur Streamlit Cloud use karein ge.",
+        example: "Real Life: Aik shop kholna jo ke pehle sirf aapke ghar (Localhost) mein thi magar ab market (Public URL) mein hai.",
+        tasks: ["Requirements.txt file generate karein.", "Streamlit Cloud pe project deploy karein."],
+        homework: ["What is Environment Variable in deployment?"],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch48-master-project",
+        title: "48. Final Mega AI Project: AI SaaS",
+        explanation: "Aik complete application banayein (jaise AI Resume Reviewer ya AI Content Generator) jis mein UI, Backend, aur AI Models sub integrated hon.",
+        tasks: ["Complete AI automation tool build karein.", "User login/signup system design karein (Logic only)."],
+        homework: ["Write a professional project documentation."],
+        beginnerFriendly: false
+      },
+      {
+        id: "ch49-freelancing",
+        title: "49. Freelancing & Career",
+        explanation: "Python aur AI seekh kar aap Fiverr, Upwork ya LinkedIn se clients kaise dhoond saktay hain. Portfolio aur GitHub profile ki ahmiyat.",
+        tasks: ["LinkedIn pe apna AI project share karein.", "Fiverr ki top Python AI gigs analyze karein."],
+        homework: ["Build your first professional developer CV."],
+        beginnerFriendly: true
+      },
+      {
+        id: "ch50-interview",
+        title: "50. Interview Prep & Graduation",
+        explanation: "Coding interviews mein puche janay wale common sawalat aur mock practice. Aapka 50 chapters ka safar yahan khatam hota hai!",
+        tasks: ["Python Quiz solve karein (Timed).", "Final project ka demo record karein."],
+        homework: ["Write a 'Thank You' note describing what you learned."],
+        beginnerFriendly: true
+      },
+      {
+        id: "milestone-9-10",
+        title: "🚀 Milestone Projects (Ch 41-50)",
+        explanation: "The Grand Finale! Full Stack AI SaaS and Multi-Agent Systems.",
+        tasks: [
+          "👨‍🏫 Project 9 (Teacher Build): AI SaaS Web App - FastAPI Backend, Streamlit Frontend, aur Gemini Brain.",
+          "👨‍🎓 Project 10 (Student Task): AI Employee System - Multiple agents automate tasks (Research + Coding + Writing)."
+        ],
+        homework: ["Apni app ka live link CV mein add karein.", "GitHub pe complete documentation likhein."],
+        beginnerFriendly: false
+      }
+    ]
+  }
+];
+
