@@ -35,12 +35,13 @@ type Page = 'landing' | 'docs' | 'projects' | 'about-creator';
 
 // --- Components ---
 
-const Navbar = ({ onNavigate, currentPage, onOpenDocs, progressPercentage, userLevel }: { 
+const Navbar = ({ onNavigate, currentPage, onOpenDocs, progressPercentage, userLevel, learningScore }: { 
   onNavigate: (page: Page) => void, 
   currentPage: Page,
   onOpenDocs: () => void,
   progressPercentage: number,
-  userLevel: string
+  userLevel: string,
+  learningScore: number
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -110,7 +111,10 @@ const Navbar = ({ onNavigate, currentPage, onOpenDocs, progressPercentage, userL
 
         <div className="flex items-center gap-4">
           <div className="hidden sm:flex flex-col items-end mr-2">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Your Progress</span>
+            <div className="flex items-center gap-1.5 mb-0.5">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Learning Score:</span>
+              <span className="text-[10px] font-black text-brand-blue bg-blue-50 px-1.5 py-0.5 rounded border border-blue-100">{learningScore} XP</span>
+            </div>
             <div className="flex items-center gap-2">
               <div className="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden">
                 <div className="h-full bg-gold transition-all duration-500" style={{ width: `${progressPercentage}%` }}></div>
@@ -290,6 +294,7 @@ const DocsPage = ({
   toggleTopicCompletion,
   progressPercentage,
   userLevel,
+  learningScore,
   allTopicsFlat,
   currentCourseData
 }: { 
@@ -302,6 +307,7 @@ const DocsPage = ({
   toggleTopicCompletion: (id: string) => void,
   progressPercentage: number,
   userLevel: string,
+  learningScore: number,
   allTopicsFlat: { mod: Module, topic: Topic }[],
   currentCourseData: Module[]
 }) => {
@@ -605,8 +611,13 @@ const DocsPage = ({
               >
                  <ChevronRight size={18} className="rotate-180" /> Previous Step
               </button>
-              <div className="hidden md:block text-[10px] font-bold text-slate-400 tracking-widest uppercase">
-                Overall Progress: {progressPercentage}%
+              <div className="hidden md:flex flex-col items-center gap-1">
+                <div className="text-[10px] font-bold text-slate-400 tracking-widest uppercase">
+                  {userLevel} • {progressPercentage}%
+                </div>
+                <div className="text-[10px] font-black text-brand-blue uppercase tracking-tighter bg-blue-50 px-2 py-0.5 rounded border border-blue-100">
+                  {learningScore} XP Points
+                </div>
               </div>
               <button 
                 onClick={handleNext}
@@ -786,9 +797,19 @@ export default function App() {
   }, [currentCourseData]);
 
   const totalTopicsCount = allTopicsFlat.length;
+  
+  // Calculate progress only for topics in the current active course
+  const currentCourseCompletedCount = useMemo(() => {
+    const currentCourseTopicIds = allTopicsFlat.map(item => item.topic.id);
+    return completedTopics.filter(id => currentCourseTopicIds.includes(id)).length;
+  }, [completedTopics, allTopicsFlat]);
+
   const progressPercentage = totalTopicsCount > 0 
-    ? Math.floor((completedTopics.length / totalTopicsCount) * 100) 
+    ? Math.floor((currentCourseCompletedCount / totalTopicsCount) * 100) 
     : 0;
+
+  // Learning Score (10 points per topic)
+  const learningScore = currentCourseCompletedCount * 10;
     
   const userLevel = useMemo(() => {
     if (progressPercentage === 0) return 'NOT STARTED';
@@ -840,6 +861,7 @@ export default function App() {
         onOpenDocs={() => setShowCourseModal(true)}
         progressPercentage={progressPercentage}
         userLevel={userLevel}
+        learningScore={learningScore}
       />
       
       <AnimatePresence>
@@ -1053,6 +1075,7 @@ export default function App() {
               toggleTopicCompletion={toggleTopicCompletion}
               progressPercentage={progressPercentage}
               userLevel={userLevel}
+              learningScore={learningScore}
               allTopicsFlat={allTopicsFlat}
               currentCourseData={currentCourseData}
             />
