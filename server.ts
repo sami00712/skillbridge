@@ -34,7 +34,7 @@ async function startServer() {
           "X-Title": "Skill Bridge AI Chatbot"
         },
         body: JSON.stringify({
-          model: "z-ai/glm-4.5-air:free",
+          model: process.env.OPENROUTER_MODEL || process.env.MODEL_NAME || process.env.MODEL || "z-ai/glm-4.5-air:free",
           messages: [
             {
               role: "system",
